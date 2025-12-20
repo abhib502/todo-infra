@@ -28,7 +28,7 @@ module "pip" {
   source = "../../azurerm_public_ip"
   pip_name = "pip_abhi"
   pip_rgname = "argres"
-  pip_location = "Central India"
+  pip_location = "South India"
   pip_allmet = "Static"
 }
 
