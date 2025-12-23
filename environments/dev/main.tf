@@ -23,14 +23,14 @@ module "vnet" {
   vnet_addspace = ["10.0.0.0/16"]
 }
 
-module "pip" {
-  depends_on = [ module.res ]
-  source = "../../azurerm_public_ip"
-  pip_name = "pip_abhi"
-  pip_rgname = "argres"
-  pip_location = "South India"
-  pip_allmet = "Static"
-}
+# module "pip" {
+#   depends_on = [ module.res ]
+#   source = "../../azurerm_public_ip"
+#   pip_name = "pip_abhi"
+#   pip_rgname = "argres"
+#   pip_location = "South India"
+#   pip_allmet = "Static"
+# }
 
 # module "lvm" {
 #   source = "../../azurerm_virtual_machine"
