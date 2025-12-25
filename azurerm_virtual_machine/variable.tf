@@ -1,6 +1,10 @@
 variable "nic_name" {}
 variable "nic_location" {}
 variable "nic_rg_name" {}
+variable "pip_name" {}
+variable "pip_rgname" {}
+variable "pip_location" {}
+variable "pip_allmet" {}
 variable "vm_name" {}
 variable "vm_rgname" {}
 variable "vm_location" {}
