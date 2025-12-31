@@ -1,10 +1,3 @@
-variable "nic_name" {}
-variable "nic_location" {}
-variable "nic_rg_name" {}
-variable "pip_name" {}
-variable "pip_rgname" {}
-variable "pip_location" {}
-variable "pip_allmet" {}
 variable "vm_name" {}
 variable "vm_rgname" {}
 variable "vm_location" {}
@@ -13,3 +6,6 @@ variable "image_publisher" {}
 variable "image_offer" {}
 variable "image_sku" {}
 variable "image_version" {}
+variable "nic_name" {
+  
+}

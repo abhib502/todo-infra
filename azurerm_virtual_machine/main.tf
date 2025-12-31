@@ -1,23 +1,3 @@
-resource "azurerm_network_interface" "nic" {
-  name                = var.nic_name
-  location            = var.nic_location
-  resource_group_name = var.nic_rg_name
-
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_subnet.mysubnet.id
-    private_ip_address_allocation = "Dynamic"
-  }
-}
-
-resource "azurerm_public_ip" "pip" {
-  name                = var.pip_name
-  resource_group_name = var.pip_rgname
-  location            = var.pip_location
-  allocation_method   = var.pip_allmet
-  sku                 = "Standard"
-}
-
 resource "azurerm_linux_virtual_machine" "vm_linux" {
   name = var.vm_name
   resource_group_name = var.vm_rgname
@@ -27,7 +7,7 @@ resource "azurerm_linux_virtual_machine" "vm_linux" {
   admin_password = "admin@todoapp1"
   disable_password_authentication = false
   network_interface_ids = [ 
-    azurerm_network_interface.nic.id ]
+    data.azurerm_network_interface.nicid.id ]
 
 os_disk {
     caching              = "ReadWrite"
@@ -40,4 +20,9 @@ source_image_reference {
     sku       = var.image_sku       
     version   = var.image_version   
 }
+}
+
+data "azurerm_network_interface" "nicid" {
+  name                = var.nic_name
+  resource_group_name = var.vm_rgname
 }
